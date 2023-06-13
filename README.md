@@ -13,6 +13,8 @@ Usages of `com.jetbrains.intellij.indexing.shared:ij-shared-indexes-tool` can be
 
 CLI can be unpacked and used in the following way: `./bin/ij-shared-indexes-tool-cli <command> <options>`.
 
+Example: `./bin/ij-shared-indexes-tool-cli indexes --ij <IDE_DIR> --project <PROJECT_DIR>`.
+
 ```
 Commands:
   version
