@@ -15,51 +15,6 @@ CLI can be unpacked and used in the following way: `./bin/ij-shared-indexes-tool
 
 Example: `./bin/ij-shared-indexes-tool-cli indexes --ij <IDE_DIR> --project <PROJECT_DIR>`.
 
-```
-Commands:
-  version
-    Displays shared indexes version information
-      Options:
-      * --ij
-          Path to a locally installed IDE
-
-  indexes
-    Generates project shared indexes and starts local server on them
-      Options:
-      * --project
-          Path to a project
-      * --ij
-          Path to a locally installed IDE
-        --port
-          Port to run local server
-          Default: 25561
-        --data-directory
-          Directory to use for generation and server data
-          Default: ./ij-shared-indexes-tool-data
-
-  server
-    Starts server on local indexes
-      Options:
-        --port
-          Port to run local server
-          Default: 25561
-        --server-directory
-          Directory to use for server data
-          Default: ./ij-shared-indexes-tool-data/server
-
-  boost
-    Measures indexing speed up with project shared indexes
-      Options:
-      * --project
-          Path to a project
-      * --ij
-          Path to a locally installed IDE
-        --port
-          Port to run local server
-          Default: 25561
-        --data-directory
-          Directory to use for generation and server data
-          Default: ./ij-shared-indexes-tool-data
-```
+Please read the [following](https://www.jetbrains.com/help/idea/shared-indexes.html#project-shared-indexes) documentation for more details.
 
 If you have any questions or suggestions, don't hesitate to file an [issue](https://github.com/JetBrains/intellij-shared-indexes-tool-example/issues).
