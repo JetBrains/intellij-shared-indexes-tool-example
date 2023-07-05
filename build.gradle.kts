@@ -8,7 +8,7 @@ application {
 }
 
 group = "com.jetbrains.intellij.indexing.shared"
-version = "0.9.1"
+version = "0.9.2"
 
 repositories {
     mavenCentral()
@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.jetbrains.intellij.indexing.shared:ij-shared-indexes-tool:0.9.1")
+    implementation("com.jetbrains.intellij.indexing.shared:ij-shared-indexes-tool:0.9.2")
     implementation("ch.qos.logback:logback-classic:1.4.6")
 }
 

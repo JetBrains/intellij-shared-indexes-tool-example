@@ -62,11 +62,13 @@ fun long1() {
                 "http://127.0.0.1:9000/shared-indexes",
                 "shared-indexes",
                 "http://127.0.0.1:9000",
-            )
-        ) {
-            // remove obsolete indexes every tenth day, see `buildAndUpload` method javadoc
-            LocalDate.now().dayOfYear % 10 == 0
-        }
+            ),
+            rebuildCdnIf = {
+                // remove obsolete indexes every tenth day, see `buildAndUpload` method javadoc
+                LocalDate.now().dayOfYear % 10 == 0
+            },
+            projectIndexesExpirationInDays = 15
+        )
 
     println(
         "Put the following lines into ${projectHome.intellijYaml()}:\n" +
@@ -106,8 +108,9 @@ fun long2() {
         )
         .buildAndUpload(
             gradleBuildPath.serverDir(),
-            "http://127.0.0.1:$port"
-        ) { LocalDate.now().dayOfYear % 10 == 0 }
+            "http://127.0.0.1:$port",
+            rebuildCdnIf = { LocalDate.now().dayOfYear % 10 == 0 }
+        )
 
     println(
         "Put the following lines into ${projectHome.intellijYaml()}:\n" +
