@@ -56,6 +56,7 @@ fun long1() {
             // interrupt and fail if one of indexes dump takes more than 15 minutes
             Duration.ofMinutes(15)
         )
+        .doNotUseDefaultConfigDirectory()
         .buildAndUpload(
             // default minio settings with `shared-indexes` bucket
             S3(
