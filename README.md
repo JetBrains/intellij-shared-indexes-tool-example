@@ -1,5 +1,7 @@
 # IntelliJ Shared Indexes Tool Example
 
+[![JetBrains team project](https://jb.gg/badges/team-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+
 ## Intro
 
 Here you can find examples of the IntelliJ shared indexes tool which
