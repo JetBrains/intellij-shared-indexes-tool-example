@@ -34,10 +34,3 @@ fun short2() {
 
     startServerOnLocalIndexes(dataDir.serverDir())
 }
-
-/**
- * Same as [short2]
- */
-fun short3() {
-    buildSharedIndexesAndStartServerOnThem(PROJECT_HOME, IJ_HOME)
-}

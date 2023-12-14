@@ -1,0 +1,20 @@
+{
+  "ijs": [
+    {
+      "ij-type": "url",
+      "ij": "https://download.jetbrains.com/idea/ideaIU-2022.3.3.exe"
+    }
+  ],
+  "project": "/home/user/workspace/java-design-patterns/",
+  "project-id": "jdp",
+  "data-directory": "ij-shared-indexes-tool-data",
+  "timeout-minutes": 10,
+  "options": {
+    "xmx": "2048m",
+    "environmentVariablesToAdd": {
+      "MY_ENV_VAR": "VALUE"
+    }
+  },
+  "compression": "plain",
+  "base-url": "https://www.url.com"
+}

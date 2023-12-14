@@ -1,0 +1,25 @@
+{
+  "ijs": [
+    {
+      "ij-type": "local",
+      "ij": "C:\\Users\\user\\AppData\\Local\\JetBrains\\Toolbox\\apps\\PyCharm-P\\ch-0\\231.8109.197"
+    }
+  ],
+  "project": "C:\\Users\\user\\workspace\\pet-project",
+  "project-id": "pet-project",
+  "data-directory": "ij-shared-indexes-tool-data",
+  "timeout-minutes": 10,
+  "options": {
+    "xmx": "4096m",
+    "environmentVariablesToAdd": {
+      "MY_ENV_VAR": "VALUE"
+    }
+  },
+  "compression": "plain",
+  "upload-to-s3": {
+    "public-url": "http://192.168.1.178:9000/shared-indexes/v2",
+    "bucket": "shared-indexes",
+    "api-url": "http://192.168.1.178:9000",
+    "root-in-bucket": "v2"
+  }
+}

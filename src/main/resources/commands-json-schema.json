@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "project": {
+      "$ref": "#/definitions/not_empty_string"
+    },
+    "ijs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ij"
+      }
+    },
+    "options": {
+      "type": "object",
+      "properties": {
+        "xmx": {
+          "$ref": "#/definitions/not_empty_string"
+        },
+        "systemPropertiesToAdd": {
+          "type": "object"
+        },
+        "systemPropertiesToRemove": {
+          "$ref": "#/definitions/string_list"
+        },
+        "vmOptionsToAdd": {
+          "$ref": "#/definitions/string_list"
+        },
+        "vmOptionPrefixesToRemove": {
+          "$ref": "#/definitions/string_list"
+        },
+        "environmentVariablesToAdd": {
+          "type": "object"
+        },
+        "environmentVariablesNameInfixToRemove": {
+          "$ref": "#/definitions/string_list"
+        }
+      },
+      "additionalProperties": false
+    },
+    "compression": {
+      "enum": [
+        "xz",
+        "gzip",
+        "plain"
+      ]
+    },
+    "data-directory": {
+      "$ref": "#/definitions/not_empty_string"
+    },
+    "base-url": {
+      "$ref": "#/definitions/not_empty_string"
+    },
+    "upload-to-s3": {
+      "type": "object",
+      "properties": {
+        "public-url": {
+          "$ref": "#/definitions/not_empty_string"
+        },
+        "bucket": {
+          "$ref": "#/definitions/not_empty_string"
+        },
+        "api-url": {
+          "$ref": "#/definitions/not_empty_string"
+        },
+        "root-in-bucket": {
+          "$ref": "#/definitions/not_empty_string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timeout-minutes": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "project-id": {
+      "$ref": "#/definitions/not_empty_string"
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "base-url"
+      ]
+    },
+    {
+      "required": [
+        "upload-to-s3"
+      ]
+    }
+  ],
+  "required": [
+    "project",
+    "ijs",
+    "project-id"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "not_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ij": {
+      "required": [
+        "ij",
+        "ij-type"
+      ],
+      "type": "object",
+      "properties": {
+        "ij": {
+          "$ref": "#/definitions/not_empty_string"
+        },
+        "ij-type": {
+          "enum": [
+            "local",
+            "url",
+            "installer"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "string_list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/not_empty_string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "upload-to-s3": {
+            "not": {
+              "type": "null"
+            }
+          }
+        },
+        "required": [
+          "upload-to-s3"
+        ]
+      },
+      "then": {
+        "properties": {
+          "upload-to-s3": {
+            "required": [
+              "public-url",
+              "bucket",
+              "api-url"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

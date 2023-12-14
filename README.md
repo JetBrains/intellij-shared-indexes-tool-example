@@ -15,9 +15,23 @@ If yes, they can help you to configure your environment for building and uploadi
 
 ## Usages
 
-CLI can be unpacked and used in the following way: `./bin/ij-shared-indexes-tool-cli <command> <options>`.
+CLI can be unpacked and used in the following way:
 
-Example: `./bin/ij-shared-indexes-tool-cli indexes-server --ij <IDE_DIR> --project <PROJECT_DIR>`.
+`./bin/ij-shared-indexes-tool-cli <json configuration>`
+
+or
+
+`./bin/ij-shared-indexes-tool-cli <command> <options>`.
+
+Example:
+
+`./bin/ij-shared-indexes-tool-cli src/main/resources/validBaseJson.json`.
+
+or
+
+`./bin/ij-shared-indexes-tool-cli indexes --ij <IDE_DIR> --project <PROJECT_DIR> --base-url https://indexes.mycompany.com`.
+
+Json examples and scheme can be found in `src/main/resources/`.
 
 If CLI is not enough, please check usages of `com.jetbrains.intellij.indexing.shared:ij-shared-indexes-tool` in `main.kt`, `short.kt` and `long.kt`.
 

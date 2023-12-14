@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.jetbrains.intellij.indexing.shared:ij-shared-indexes-tool:0.9.8")
+    implementation("com.jetbrains.intellij.indexing.shared:ij-shared-indexes-tool:0.9.9")
     implementation("ch.qos.logback:logback-classic:1.4.6")
 }
 
